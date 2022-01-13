@@ -10,7 +10,7 @@ import { AllExceptionsFilter } from './app/core/filters/all-exceptions-filter';
 @Module({
   imports: [
     TodoModule,
-    MongooseModule.forRoot('mongodb://localhost/todo-project')
+    MongooseModule.forRoot('mongodb://mongo-alias/todo-project')
   ],
   controllers: [],
   providers: [

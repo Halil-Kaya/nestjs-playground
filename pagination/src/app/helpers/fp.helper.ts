@@ -1,5 +1,5 @@
 import * as $$ from "lodash";
-import {Types} from "mongoose";
+import { Types } from "mongoose";
 
 namespace FPHelper {
     export const isSubset = (arr, rawTarget) => {
@@ -31,4 +31,4 @@ namespace FPHelper {
     }
 }
 
-export {FPHelper}
+export { FPHelper }

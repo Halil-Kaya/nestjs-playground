@@ -10,11 +10,14 @@ export class TodoService {
     }
 
     async create(newTodo: any) {
-        const { order } = await this.todoModel
+        let todo = await this.todoModel
             .findOne()
             .sort({ order: -1 })
             .limit(1)
-            .select('order')
+        let order = 1
+        if (todo) {
+            order = todo.order
+        }
         newTodo['order'] = (order + 1)
         return await this.todoModel.create(newTodo)
     }

@@ -1,0 +1,2 @@
+mongo -> docker run --name mongo-server -v /data/db:/data/db -p 27018:27017 -d mongo
+node -> docker run -p 3000:3000 --name project --link mongo-server:mongo-alias pagination
