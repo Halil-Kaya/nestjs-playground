@@ -1,12 +1,13 @@
 import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { Paginate, Pagination } from '@source/app/core/decorators/pagination.decorator';
+import { ResponseHelper } from '@source/app/helpers/response.helper';
 import { Request, Response } from 'express';
 import { Todo } from '../model/todo';
 import { TodoService } from '../service/todo.service';
 
 @Controller('todo')
 export class TodoController {
-
+    controller = 'todo'
     constructor(private readonly todoService: TodoService) {
     }
 
@@ -15,12 +16,17 @@ export class TodoController {
         @Res() response: Response,
         @Paginate() pagination: Pagination) {
         const todos = await this.todoService.getTodos(pagination)
-        response.json({
+        response.json(ResponseHelper.set(
             todos,
-            paginationInfo: {
-                ...pagination
+            {
+                controller: this.controller,
+                params: request.params,
+                pagination: {
+                    ...pagination
+                },
+                headers: request.headers
             }
-        })
+        ))
     }
 
     @Post('')
