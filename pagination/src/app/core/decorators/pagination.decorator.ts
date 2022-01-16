@@ -20,6 +20,7 @@ export interface Pagination {
 export const Paginate = createParamDecorator(
     (data: string, ctx: ExecutionContext): Pagination => {
         const request = ctx.switchToHttp().getRequest();
+
         let page = request.body.page
             ? parseInt(request.body.page)
             : (request.query.page
@@ -46,7 +47,7 @@ export const Paginate = createParamDecorator(
 
         return {
             offset: page * limit < 0 ? 0 : (page * limit),
-            limit: limit < 0 || limit == undefined ? 15 : limit,
+            limit: limit == -1 ? Number.MAX_VALUE : (limit < 0 ? undefined : limit),
             sort: sort,
             order: order,
             currentPage: page

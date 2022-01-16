@@ -6,6 +6,8 @@ import { Pagination } from '@source/app/core/decorators/pagination.decorator';
 
 @Injectable()
 export class TodoService {
+    DEFAULT_LIMIT = 5;
+
     constructor(@InjectModel(Todo.name) readonly todoModel: Model<Todo>) {
     }
 
@@ -27,13 +29,14 @@ export class TodoService {
         return this.todoModel
             .find({ ...query })
             .sort({ [pagination?.sort]: pagination?.order })
-            .skip(pagination?.offset ? pagination.offset : 0)
-            .limit(pagination?.limit ? pagination.limit : 15)
+            .skip(pagination.offset)
+            .limit(pagination?.limit)
     }
 
     async updatePagination(pagination: Pagination, query?: FilterQuery<Todo>) {
         pagination.totalData = await this.todoModel.count({ ...query })
-        pagination.limit = pagination.limit ? pagination.limit : 15
+        pagination.limit = pagination.limit ? pagination.limit : this.DEFAULT_LIMIT
+        pagination.offset = pagination?.offset ? pagination.offset : 0;
         pagination.totalPage = Math.floor(pagination.totalData / pagination.limit)
         pagination.hasNextPage = pagination.currentPage >= pagination.totalPage ? false : true
         pagination.hasPreviousPage = pagination.currentPage > 0 ? true : false
