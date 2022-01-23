@@ -9,13 +9,12 @@ import { TodoModule } from './app/modules/todo/todo.module';
     imports    : [ TodoModule ],
     controllers: [],
     providers  : [
-        MyLogger,
         {
             provide : APP_FILTER,
             useClass: AllExceptionsFilter,
         }
     ],
-    exports    : [ MyLogger ]
+    exports    : []
 })
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer): void {

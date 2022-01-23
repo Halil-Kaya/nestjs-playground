@@ -1,25 +1,31 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { LoggerService } from 'nest-logger';
+import { Injectable } from '@nestjs/common';
+import { MyLogger } from '../../../core/logger/custom.logger';
 import { Todo } from '../model/todo';
 
 @Injectable()
 export class TodoService {
     private readonly todos = [];
-    private readonly logger = new Logger(TodoService.name);
+    private readonly logger = new MyLogger(TodoService.name);
 
     constructor() {
     }
 
     getAllTodos() {
-        this.logger.log('hello', {
-            hello: 212312
-        });
-        return this.todos;
+        try {
+            const todos = this.todos;
+            this.logger.log('getAllTodos:todos', todos);
+            const a = {};
+            console.log(a['a'].b);
+            return todos;
+        } catch(e) {
+            this.logger.error('getAllTodos:e', e);
+        }
     }
 
     getTodoById(id: string) {
         const todo = this.todos.find(todo => todo._id == id);
         if (!todo) {
+            this.logger.error('bir hata oldu', null);
             throw new Error('Boyle bir todo yok!');
         }
         return todo;
