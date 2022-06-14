@@ -1,0 +1,122 @@
+{
+  "program": {
+    "fileInfos": {
+      "../src/app.service.ts": {
+        "version": "eaf8514ce110fa428a93a27408df4d06d133dbd9ed0a775c315ddfdd507853a9",
+        "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
+        "affectsGlobalScope": false
+      },
+      "../src/app.controller.ts": {
+        "version": "b71400707009a93fc097198e51afc9256a4a30f688d924ba728125ef9b2e5417",
+        "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
+        "affectsGlobalScope": false
+      },
+      "../src/items/dto/create-item.dto.ts": {
+        "version": "8ad31ebddfc1d0e0b1f1a2564886e1903b6c8532f7e664ee65ae069aaf7b5b73",
+        "signature": "ae62477f5bc78a42364152861bde6c08a27e2cdeacc6ce3f5bc226522cffa54c",
+        "affectsGlobalScope": false
+      },
+      "../src/items/interfaces/item.interface.ts": {
+        "version": "311883820e3a4066c30142c3475c082ccf314fac9cb7bfd654b97a0b670ae588",
+        "signature": "21fe27a0e4786b6dbf4844ba79f46f80ccda0b08ad398aec92e9e3278f40a812",
+        "affectsGlobalScope": false
+      },
+      "../src/items/items.service.ts": {
+        "version": "ac541918252f1552295ba15f761bb95e4462e71d722caed885abb6679cb977a6",
+        "signature": "10e7dc3b252be63d35710a358ce8fbfd54c6336e083f51dfc6df8139e9cf6fe2",
+        "affectsGlobalScope": false
+      },
+      "../src/items/items.controller.ts": {
+        "version": "b04a9aca1d690789125100db93c60085db163532a9f0c97c386c964cfd4b0fe3",
+        "signature": "c7d58d3c981f1f90550bdb7a796d483f7df218afdfa247c743f9835980fb0a2c",
+        "affectsGlobalScope": false
+      },
+      "../src/items/schemas/item.schema.ts": {
+        "version": "613e81bbc9f1b1c59486e5ad1e542d4ed625b566f7992659493489c050035943",
+        "signature": "761abfbedfd3aca889adf708b68d60668ab0e605a95238e8856d79ffc243b53a",
+        "affectsGlobalScope": false
+      },
+      "../src/items/items.module.ts": {
+        "version": "f23e749b74f300e3f6d1c7461249f04f2ec0fe677a1002aad2bae3ae0f106bf1",
+        "signature": "b771721abd39d3091c7e9d0f3978f05667fe414d082265020e61e63a2943a83a",
+        "affectsGlobalScope": false
+      },
+      "../src/config/keys.ts": {
+        "version": "e9c01629a4b8a2eb11cfbcb9543b8f3a51fa3d1eea5fba5a19d51fd289c41816",
+        "signature": "65dba4176b8b6bed97caca241289891acffef895cc7eb6a8ce8eec50a3eca36d",
+        "affectsGlobalScope": false
+      },
+      "../src/app.module.ts": {
+        "version": "55e39d4bcfefd1c14f4c3f736d7647a9b986034dfcf4488f3afd30dd6bb2e0f7",
+        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "affectsGlobalScope": false
+      },
+      "../src/main.ts": {
+        "version": "e25d9bd8f80b6ffbcc8826ed1b407e747e4fbe346c5bab62cbe5837da4eeb189",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      }
+    },
+    "options": {
+      "module": 1,
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "target": 4,
+      "sourceMap": true,
+      "outDir": "./",
+      "baseUrl": "..",
+      "incremental": true,
+      "configFilePath": "../tsconfig.build.json"
+    },
+    "referencedMap": {
+      "../src/app.controller.ts": [
+        "../src/app.service.ts"
+      ],
+      "../src/app.module.ts": [
+        "../src/app.controller.ts",
+        "../src/app.service.ts",
+        "../src/config/keys.ts",
+        "../src/items/items.controller.ts",
+        "../src/items/items.module.ts",
+        "../src/items/items.service.ts"
+      ],
+      "../src/items/items.controller.ts": [
+        "../src/items/dto/create-item.dto.ts",
+        "../src/items/interfaces/item.interface.ts",
+        "../src/items/items.service.ts"
+      ],
+      "../src/items/items.module.ts": [
+        "../src/items/items.controller.ts",
+        "../src/items/items.service.ts",
+        "../src/items/schemas/item.schema.ts"
+      ],
+      "../src/items/items.service.ts": [
+        "../src/items/interfaces/item.interface.ts"
+      ],
+      "../src/main.ts": [
+        "../src/app.module.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../src/app.controller.ts": [
+        "../src/app.service.ts"
+      ],
+      "../src/items/interfaces/item.interface.ts": [
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/items/items.controller.ts": [
+        "../src/items/interfaces/item.interface.ts",
+        "../src/items/items.service.ts"
+      ],
+      "../src/items/items.service.ts": [
+        "../node_modules/mongoose/index.d.ts",
+        "../src/items/interfaces/item.interface.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": []
+  },
+  "version": "4.2.4"
+}
